@@ -334,9 +334,19 @@ font-weight: bold;
   font-size: 14px;
   line-height: 1.7;
   color: #383636;
-  
-
   }
+
+  .about .text .content button {
+    font-size: 20px;
+    color: #fff;
+    background: linear-gradient(to right, #550484 , #1d032899);
+    border: none;
+    outline: none;
+    padding: 10px 25px;
+    margin: 27px;
+    border-radius: 10px;
+    font-weight: 900;
+    }
   .about .text .image  {
     position: relative;
 padding-left: 160px;     }
