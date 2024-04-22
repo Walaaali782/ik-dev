@@ -449,7 +449,7 @@ z-index: 1;
 font-weight:900;
 font-size: 18px;
   margin: 15px 0;
-  color: var(--transparent-color);
+  color: #000;
 
 }
 .slider-container  .box  p {
@@ -458,18 +458,19 @@ font-size: 18px;
   color: #111111;
   }
 
-
-
 .slider-container .box.active{
 opacity: 1;
 top: 30px;
-outline: 1px solid #b665e4;
+outline: 1px solid #e67ce6;
 position: relative;
 }
-.owl-carousel .box.active .card {
+.owl-carousel .box.active .card{
   opacity: 1;
   transform: scale3d(1, 1, 1);
 }
+.slider-container .box.active h4{ 
+  color: #e67ce6;
+  }
 
 .slider-controls{
   margin: auto;
