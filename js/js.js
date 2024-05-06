@@ -121,3 +121,92 @@ function removeallactice(){
     })
 }
 
+
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+
+
+// start slider of contentrr 
+
+var sliderbox = Array.from(document.querySelectorAll('.contentrr .menu-content .box'));
+
+// get number od slides
+var sliderboxlenght = sliderbox.length;
+
+// set current
+var sliderboxcount = 1;
+
+
+var prevfv = document.querySelector('#prevfv i');
+var nextfv = document.querySelector('#nextfv i');
+
+nextfv.onclick = nextfvslide;
+prevfv.onclick = prevfvslide;
+
+
+
+for (let index = 0; index < sliderbox.length ; index++) {
+    
+    sliderbox[index].onclick = function () {
+        sliderboxcount = parseInt(this.getAttribute('data-index'));
+        checkcontent();
+    }
+}
+
+checkcontent();
+
+function nextfvslide(){
+
+    if(nextfv.classList.contains('disslide')){
+        return false;
+    
+    }else{
+        sliderboxcount++;
+        checkcontent();
+    }
+    }
+
+function prevfvslide(){
+        if(prevfv.classList.contains('disslide')){
+            return false;
+        
+        }else{
+            sliderboxcount--;
+        
+            checkcontent();
+        }
+        
+    }
+    function checkcontent() {
+    
+    
+        removeallacticeslider();
+    
+        //SET ACTIVE CLASS of image 
+        sliderbox[sliderboxcount - 1].classList.add('boody');
+    
+         //SET ACTIVE CLASS of number 
+
+    // check currentslide 
+    if(sliderboxcount == 1){
+        prevfv.classList.add('disslide');
+    }else{
+        prevfv.classList.remove('disslide');
+    }
+    
+    if(sliderboxcount == sliderboxlenght){
+        nextfv.classList.add('disslide');
+    }else{
+        nextfv.classList.remove('disslide');
+    }
+    }
+    
+    //remove all actice
+    function removeallacticeslider(){
+        sliderbox.forEach(function (img) {
+            img.classList.remove('boody');
+        })
+    }
