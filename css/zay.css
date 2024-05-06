@@ -897,7 +897,7 @@ cursor:no-drop ;
   grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   gap: 20px;
 }
-@media (min-width: 1300px) {
+@media (max-width: 990px) {
   .contentrr .menu-content {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
@@ -1069,8 +1069,25 @@ cursor:no-drop ;
 }
 
 @media (max-width: 768px) {
+  .contentrr .circleafter {
+    display: none;
+  }
+  .contentrr .circlebefore {
+    display: none;
+  }
+  .contentrr .text p {
+    font-size: 12px;
+    width: 100%;
+  }
+  .contentrr .slider-soohm{
+    display: none;
+  }
   .things {
    display: none;
+  }
+
+  .rec {
+    display: none;
   }
 }
 
