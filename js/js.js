@@ -210,3 +210,162 @@ function prevfvslide(){
             img.classList.remove('boody');
         })
     }
+
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// const isTure =[33,2,8];
+
+// console.log(isTure.sort()); 
+
+
+// isTure[6] = 9
+// console.log(isTure[5]);
+
+// function say(){
+//     console.log(isTure);
+//     console.log(bbm);
+
+//     var isTure = 'jjjj';
+//     var bbm = 'bbm';
+// }
+
+// say();
+
+
+// for (let index = 0; index < 3; index++) {
+//     setTimeout(() => {
+//         console.log(index);
+//     }, 1);
+    
+// }
+
+// for (var index = 0; index < 3; index++) {
+//     setTimeout(() => {
+//         console.log(index);
+//     }, 1);
+    
+// }
+
+
+
+
+
+
+
+//get slider item array 
+var slidertech = Array.from(document.querySelectorAll('.tech .imeges .box'));
+
+// get number od slides
+var sildertechcounter = slidertech.length;
+
+// set current
+var currenttech = 1;
+
+
+var prevtech = document.getElementById('prevtech');
+var nexttech = document.getElementById('nexttech');
+
+nexttech.onclick = nexttechvs;
+prevtech.onclick = prevtechvs;
+
+
+
+// creat the new ul 
+var  skillul = document.getElementById('skillul');
+
+
+//get   indicators slider item ul  
+var  skillulli = Array.from(document.querySelectorAll('#skillul li'))
+
+for (let index = 0; index < skillulli.length ; index++) {
+    
+    skillulli[index].onclick = function () {
+        currenttech = parseInt(this.getAttribute('data-index'));
+        checktech();
+    }
+}
+
+checktech();
+
+function nexttechvs(){
+
+if(nexttech.classList.contains('diabled')){
+    return false
+
+}else{
+    currenttech++;
+
+    checktech();
+}
+}
+function prevtechvs(){
+    if(prevtech.classList.contains('diabled')){
+        return false
+    
+    }else{
+        currenttech--;
+    
+        checktech();
+    }
+    
+}
+function checktech() {
+
+   
+    removeallacticetech();
+
+    //SET ACTIVE CLASS of image 
+    slidertech[currenttech - 1].classList.add('active')
+
+     //SET ACTIVE CLASS of number 
+     skillul.children[currenttech - 1].classList.add('active');
+
+// check currentslide 
+if(currenttech == 1){
+    prevtech.classList.add('diabled');
+}else{
+    prevtech.classList.remove('diabled');
+}
+
+if(currenttech == sildertechcounter){
+    nexttech.classList.add('diabled');
+}else{
+    nexttech.classList.remove('diabled');
+}
+}
+
+//remove all actice
+function removeallacticetech(){
+    slidertech.forEach(function (img) {
+        img.classList.remove('active');
+    })
+    skillulli.forEach(function (polt) {
+        polt.classList.remove('active');
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
